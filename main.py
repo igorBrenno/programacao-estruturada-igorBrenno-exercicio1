@@ -4,7 +4,12 @@ def q1():
     verifique se ele é par ou ímpar. Imprima uma mensagem informando o 
     resultado.
     """
-    pass
+    numero = int(input(""))
+
+    if numero % 2 == 0:
+        print("Par")
+    else:
+        print("Impar")
 
 
 def q2():
@@ -14,14 +19,30 @@ def q2():
     Para 'texto', imprima 'to'
 
     """
-    pass
+    
+    texto = input("")
+
+    metade = int(len(texto) / 2)
+
+    if metade % 2 == 0:
+        metade = metade + 1
+        
+    else:
+        metade = metade
+    
+    saida = texto[metade:]
+    print(saida)
 
 def q3():
     """
     Leia um número da entrada e imprima todos os 10 primeiros múltiplos dele na mesma linha
     """
-    pass
+    numero = int(input(""))
+    lista = ""
+    for i in range(1,11):
 
+        lista = lista + str(numero * i) + " "
+    print(lista, end="")
 
 def q4():
     """
@@ -32,7 +53,25 @@ def q4():
      - romulo junior - Romulo Junior
      - ze da manga - Ze da Manga
     """
-    pass
+    nome = input("")
+
+    x = nome.split()
+    tamanho = len(x)
+    saida = ""
+    for i in range(tamanho):
+        if x[i] == x[0] or x[i] == x[tamanho - 1]:
+            if i < tamanho - 1:
+                saida = saida + x[i][0].upper() + x[i][1:] + " "
+            else:
+                saida = saida + x[i][0].upper() + x[i][1:]
+        else:
+            if i < tamanho - 1:
+                saida = saida + x[i][0] + x[i][1:] + " "
+            else:
+                saida = saida + x[i][0] + x[i][1:]
+
+    print(saida)
+
 
 def q5():
     """
@@ -44,5 +83,12 @@ def q5():
         322: isosceles
         234: escaleno
     """
-    pass
-
+    lado = input("")
+    saida = ""
+    if lado[0] == lado[1] and lado[0] == lado[2]:
+        saida = "equilátero"
+    elif lado[0] == lado[1] or lado[0] == lado[2] or lado[1] == lado[2]:
+        saida = "isósceles"
+    else:
+        saida = "escaleno"
+    print(saida)
